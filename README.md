@@ -7,12 +7,17 @@
 ```js
 import { BranchWebpackPlugin, vitePluginGitInfo } from 'branch-info-plugin'
 
-// in webpack，输出根目录可自定义配置
+// in webpack
 plugins: [new BranchWebpackPlugin({outputFile: 'commit.txt'})]
 
-// in vite，输出在根目录 lastGitInfo.txt TODO 后续优化
-plugins: [vitePluginGitInfo()]
+// in vite
+plugins: [vitePluginGitInfo({outputFile: 'commit.txt'})]
 ```
+
+## Props
+| 名称     | 说明                 | 类型                                   | 是否必选 |
+| -------- | -------------------- | -------------------------------------- | -------- |
+| outputFile | 要输出文件名，默认 `lastGitInfo.txt` | `string`                               | 否       |
 ## Example
 打包完成输出内容：
 
