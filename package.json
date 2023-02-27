@@ -1,6 +1,6 @@
 {
   "name": "branch-info-plugin",
-  "version": "1.0.5",
+  "version": "1.0.8",
   "description": "use plugin generate a file output some last commit info",
   "main": "./dist/main.js",
   "types": "./dist/types/index.d.ts",
@@ -14,7 +14,7 @@
   "homepage": "https://github.com/rhwoodpecker/branch-info-plugin",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack --mode=production --node-env=production",
+    "build": "webpack --mode=production --node-env=production --progress",
     "build:dev": "webpack --mode=development",
     "build:prod": "webpack --mode=production --node-env=production",
     "watch": "webpack --watch",

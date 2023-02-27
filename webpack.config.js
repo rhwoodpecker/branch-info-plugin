@@ -1,4 +1,5 @@
-// Generated using webpack-cli https://github.com/webpack/webpack-cli
+// import {BranchWebpackPlugin} from './src/index'
+// // Generated using webpack-cli https://github.com/webpack/webpack-cli
 
 const path = require("path");
 
