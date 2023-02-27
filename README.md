@@ -4,7 +4,7 @@
 ## Install
 `npm install branch-info-plugin`
 ## Usage
-```
+```js
 const branchInfoPlugin require('branch-info-plugin')
 
 // in webpakck
