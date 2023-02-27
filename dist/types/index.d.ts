@@ -1,4 +1,7 @@
-declare const vitePluginGitInfo: () => {
+interface vitePluginGitInfoProps {
+    outputFile?: string;
+}
+declare const vitePluginGitInfo: (options?: vitePluginGitInfoProps) => {
     name: string;
     configResolved(config: any): void;
     closeBundle(): void;

@@ -1,6 +1,6 @@
 {
   "name": "branch-info-plugin",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "use plugin generate a file output some last commit info",
   "main": "./dist/main.js",
   "types": "./dist/types/index.d.ts",

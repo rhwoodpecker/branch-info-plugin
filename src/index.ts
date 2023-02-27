@@ -2,7 +2,15 @@ import { getBranchVersionInfo } from './utils';
 const path = require('path');
 const fs = require('fs');
 
-const vitePluginGitInfo = () => {
+interface vitePluginGitInfoProps {
+    outputFile?: string;
+}
+
+// 默认输出文件名
+const DefaultOutputFile = 'lastGitInfo.txt';
+
+const vitePluginGitInfo = (options: vitePluginGitInfoProps = {}) => {
+    const filename = options.outputFile || DefaultOutputFile;
     let outDir: string;
     return {
         name: 'vite-plugin-git-info',
@@ -11,9 +19,9 @@ const vitePluginGitInfo = () => {
         },
         closeBundle() {
             const buildInfo = getBranchVersionInfo();
-            fs.writeFile(path.join(outDir, 'build.txt'), buildInfo, (err) => {
+            fs.writeFile(path.join(outDir, filename), buildInfo, (err) => {
                 if (err) throw err;
-                console.log(`Git info saved to ${path.join(outDir, 'build.txt')}`);
+                console.log(`Git info saved to ${path.join(outDir, filename)}`);
             });
         }
     };
