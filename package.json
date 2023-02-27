@@ -3,6 +3,12 @@
   "version": "1.0.0",
   "description": "use plugin generate a file output some last commit info",
   "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rhwoodpecker/branch-info-plugin"
+  },
+  "homepage": "https://github.com/rhwoodpecker/branch-info-plugin",
+
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
