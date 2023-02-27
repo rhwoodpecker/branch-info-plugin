@@ -1,5 +1,5 @@
 
-import path from 'path';
+const path = require('path');
 const fs = require('fs');
 
 // 同步子进程
@@ -86,4 +86,4 @@ const branchInfoPlugin = (options) => {
 }
 
 
-module.exports = branchInfoPlugin;
+export default branchInfoPlugin;

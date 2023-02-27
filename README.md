@@ -5,7 +5,7 @@
 `npm install branch-info-plugin`
 ## Usage
 ```js
-const branchInfoPlugin require('branch-info-plugin')
+import branchInfoPlugin from 'branch-info-plugin'
 
 // in webpakck
 plugins: [new branchInfoPlugin({ webpack: true })]
