@@ -1,0 +1,14 @@
+{
+  "name": "branch-info-plugin",
+  "version": "1.0.0",
+  "description": "use plugin generate a file output some last commit info",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "rhwoodpecker",
+  "license": "ISC",
+  "devDependencies": {
+    "path": "^0.12.7"
+  }
+}
