@@ -11,5 +11,5 @@ import { BranchWebpackPlugin, vitePluginGitInfo } from 'branch-info-plugin'
 plugins: [new BranchWebpackPlugin()]
 
 // in vite，输出在根目录
-plugins: [new branchInfoPlugin({ vite: true })]
+plugins: [new branchInfoPlugin()]
 ```
