@@ -13,3 +13,19 @@ plugins: [new BranchWebpackPlugin({outputFile: 'commit.txt'})]
 // in vite，输出在根目录 build.txt TODO 后续优化
 plugins: [vitePluginGitInfo()]
 ```
+## Example
+打包完成输出内容：
+
+```txt
+
+    当前分支名：rhwoodpecker/master
+
+    提交的hash：cd7994775050d4252312466d3e7c937b567
+
+    提交人姓名：‘renhao’
+
+    提交日期：2023-02-24 18:07:10
+
+    提交描述：chore: update README.md
+  
+```
