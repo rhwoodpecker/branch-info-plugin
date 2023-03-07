@@ -2,18 +2,19 @@ import { getBranchVersionInfo } from './utils';
 const path = require('path');
 const fs = require('fs');
 
-interface vitePluginGitInfoProps {
+interface vitePluginBranchInfoProps {
     outputFile?: string;
 }
 
 // 默认输出文件名
 const DefaultOutputFile = 'lastGitInfo.txt';
 
-const vitePluginGitInfo = (options: vitePluginGitInfoProps = {}) => {
+// 遵循vite插件命名
+const vitePluginBranchInfo = (options: vitePluginBranchInfoProps = {}) => {
     const filename = options.outputFile || DefaultOutputFile;
     let outDir: string;
     return {
-        name: 'vite-plugin-git-info',
+        name: 'vite-plugin-branch-info',
         configResolved(config) {
             outDir = config.build.outDir;
         },
@@ -27,27 +28,28 @@ const vitePluginGitInfo = (options: vitePluginGitInfoProps = {}) => {
     };
 };
 
-interface BranchWebpackPluginProps {
+interface BranchInfoWebpackPluginProps {
     outputFile?: string;
 }
-class BranchWebpackPlugin {
+
+//  遵循webpack插件命名
+class BranchInfoWebpackPlugin {
     static defaultOptions = {
         outputFile: 'lastGitInfo.txt'
     };
-    options: BranchWebpackPluginProps;
+    options: BranchInfoWebpackPluginProps;
 
-    constructor(options: BranchWebpackPluginProps = {}) {
-        this.options = { ...BranchWebpackPlugin.defaultOptions, ...options };
+    constructor(options: BranchInfoWebpackPluginProps = {}) {
+        this.options = { ...BranchInfoWebpackPlugin.defaultOptions, ...options };
     }
 
     apply(compiler) {
-
-        const pluginName = BranchWebpackPlugin.name
+        const pluginName = BranchInfoWebpackPlugin.name;
         // 异步方法，生成打包目录时：生成文件
         compiler.hooks.emit.tapAsync(pluginName, (compilation, cb) => {
             // 添加分支版本信息文件
             const branchVersionInfo = getBranchVersionInfo();
-            
+
             compilation.assets[this.options.outputFile] = {
                 source: () => branchVersionInfo,
                 size: () => branchVersionInfo.length
@@ -57,4 +59,4 @@ class BranchWebpackPlugin {
     }
 }
 
-export { BranchWebpackPlugin, vitePluginGitInfo };
+export { BranchInfoWebpackPlugin, vitePluginBranchInfo };

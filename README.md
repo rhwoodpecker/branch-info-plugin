@@ -5,13 +5,14 @@
 `npm install branch-info-plugin`
 ## Usage
 ```js
-import { BranchWebpackPlugin, vitePluginGitInfo } from 'branch-info-plugin'
+import { BranchInfoWebpackPlugin, vitePluginBranchInfo } from 'branch-info-plugin'
 
+// 遵循webpack和vite plugin 命名规范
 // in webpack
-plugins: [new BranchWebpackPlugin({outputFile: 'commit.txt'})]
+plugins: [new BranchInfoWebpackPlugin({outputFile: 'commit.txt'})]
 
 // in vite
-plugins: [vitePluginGitInfo({outputFile: 'commit.txt'})]
+plugins: [vitePluginBranchInfo({outputFile: 'commit.txt'})]
 ```
 
 ## Props

@@ -1,20 +1,20 @@
-interface vitePluginGitInfoProps {
+interface vitePluginBranchInfoProps {
     outputFile?: string;
 }
-declare const vitePluginGitInfo: (options?: vitePluginGitInfoProps) => {
+declare const vitePluginBranchInfo: (options?: vitePluginBranchInfoProps) => {
     name: string;
     configResolved(config: any): void;
     closeBundle(): void;
 };
-interface BranchWebpackPluginProps {
+interface BranchInfoWebpackPluginProps {
     outputFile?: string;
 }
-declare class BranchWebpackPlugin {
+declare class BranchInfoWebpackPlugin {
     static defaultOptions: {
         outputFile: string;
     };
-    options: BranchWebpackPluginProps;
-    constructor(options?: BranchWebpackPluginProps);
+    options: BranchInfoWebpackPluginProps;
+    constructor(options?: BranchInfoWebpackPluginProps);
     apply(compiler: any): void;
 }
-export { BranchWebpackPlugin, vitePluginGitInfo };
+export { BranchInfoWebpackPlugin, vitePluginBranchInfo };
